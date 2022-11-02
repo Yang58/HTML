@@ -1,0 +1,63 @@
+<!-- 하이퍼 링크  ,  이미지  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지</title>
+    <style>
+        h1{
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <h1> 절대 경로 </h1>
+    <img src=" E:\Htmlworkspace\workspace.png" 
+    height="200" width="200" alt="Test 절대 경로"  />
+    <br>
+    <hr>
+    <h1> 상대 경로</h1>  <!-- 이 파일이 저장되어있는 htmlworkspace 는 생략 가능하다. -->
+    <!-- 상위 폴더 : ../ 이미지명  
+         하위 폴더 : 하위폴더명 \ 이미지명 -->
+    <img src=" workspace.png"  
+    height="200" width="200"  alt="Test 상대 경로 "/>
+    <!-- url 을 사용해 이미지를 바로 불러올수 있다. -->
+    <!-- <img src = "url 주소 " />  -->
+    <hr>
+    <br>
+
+
+    <!-- 하이퍼 링크 -->
+    <h1> 하이퍼 링크 </h1>
+    <!-- href =" 파일위치 , url " -->
+    <a href="http:\\www.naver.com" 
+    style="font-size: 150; color: darkblue; border: 5;"> 네이버 </a>
+    <br> 
+    <a href="first.html" target="_blank" > first.html</a>
+    <br>
+    <a href="#content1"> 한줄 평</a>
+    <br>
+    <a href="#content2"> 한줄 평1</a>
+    <br>
+    <a href="#content3"> 한줄 평2</a>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <a id="content1" > 한줄평 </a>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <a id="content2" > 한줄평1 </a>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <a id="content3" > 한줄평2 </a>
+
+    <a href="#top"> <h2>맨위로</h2></a>
+
+
+
+        <!-- 이미지에서 원하는 위치에 좌표 설정  -->
+    <img src="workspace.png" usemap="a"/>
+    <map name="a">
+        <area shape="rect" coords="좌표" href="하이퍼링크" />  
+    </map>
+    
+</body>
+</html>

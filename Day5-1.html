@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 선택자
+            1.전체 : * { }
+            2.태그 : p { }
+            3.클래스 class { }
+            4.아이디 #id { }
+            5.그룹 h1,h2 { }
+        */
+
+        /* 연결 선택자 */
+        /* 후손 선택자 */
+        section ul{
+            border: 1px solid black;
+        }
+        /* 자식선택자 */
+        section > ul{
+            color: red;
+        }
+        /* 형제 선택자  p ~ ul */
+        p + ul {
+            background-color: aqua;
+        }
+
+        /* 속성 선택자  */
+
+    </style>
+</head>
+<body>
+    <!-- 미디어 태그 
+            1. 오디오 : mp3
+            2. 비디오 : mp4
+             <audio src="bgsound.mp3" controls autoplay loop></audio>
+             <video src="vdieo.mp4" controls width="100%" height="50%" poster="image11.png" ></video>
+    -->
+    <section id="container">
+        <p>p1</p>
+        <ul>
+            <li>직접 통화</li>
+            <li>문자 보내기</li>
+            <p>p2</p>
+            <li>
+                <ul>
+                    <li> 1인</li>
+                    <li> 2인</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+</body>
+</html>

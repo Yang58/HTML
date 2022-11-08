@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+       <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+       
+       
+    <h4 class="text-primary"> 기본 폼 </h4>
+    <div class="container">
+        <form>
+            <label for="text">이름</label>
+            <input type="text" placeholder="이름">
+            <label for="emailaddress">이메일</label>
+            <input type="emailaddress" placeholder="이메일">
+            <button type="submit"> 확인 </button>
+        </form>
+        <br><br>
+
+        <h4 class="text-primary"> 부트스트랩 폼 </h4>
+        <form>
+            <div class="form-group">
+                <label for="text">이름</label>
+                <input type="text" class="form-control" placeholder="이름">
+            </div>
+
+            <div class="form-group">
+                <label for="emailaddress">이메일</label>
+                <input type="emailaddress" class="form-control" placeholder="이메일">
+            </div>
+
+            <div class="form-group">             
+                <button type="submit"> 확인 </button>
+            </div>
+        </form>
+
+       
+        <h4 class="text-primary"> 부트스트랩 인라인 폼 </h4>
+        <form role = "form" class ="form-inline">
+            <div class="form-group"> 
+                <label for="text"> 이름 </label>
+                <input type="text" class="form-control" placeholder="이름">
+            </div>
+
+            <div class="form-group">
+                <label for="emailaddress">이메일</label>
+                <input type="emailaddress" class="form-control" placeholder="이메일">
+            </div>
+
+            <div class="form-group">             
+                <button type="submit"> 확인 </button>
+            </div>
+        </form>
+
+          
+        <h4 class="text-primary"> label에 sr-only 속성 적용  </h4>
+        <form role = "form" class ="form-inline">
+            <div class="form-group"> 
+                <label for="text" class="sr-only"> 이름 </label>
+                <input type="text" class="form-control" placeholder="이름">
+            </div>
+
+            <div class="form-group">
+                <label for="emailaddress" class="sr-only" >이메일</label>
+                <input type="emailaddress" class="form-control" placeholder="이메일">
+            </div>
+
+            <div class="form-group">             
+                <button type="submit"> 확인 </button>
+            </div>
+        </form>
+        <h4 class="text-primary"> 수평 정렬 폼 </h4>
+        <form role = "form" class ="from-hoizontal">
+            <div class="form-group"> 
+                <label for="text" class="col-xs-2 col-lg-2 control-label" > 이름 </label>
+                <div class="col-xs-10 col-lg-10">
+                    <input type="text" class="form-control" placeholder="이름">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="emailaddress" class="col-xs-2 col-lg-2 control-label">이메일</label>
+                <div class="col-xs-10 col-lg-10">
+                    <input type="emailaddress" class="form-control" placeholder="이메일">
+                </div>
+            </div>
+
+            <div class="form-group">    
+                <div class="col-xs-2 col-xs-2 col-lg-10 col-lg-10">
+                    <button type="submit"> 확인 </button>
+                </div>         
+            </div>
+        </form>
+
+
+        <form role="form">
+            <textarea rows="5" class="form-control">
+
+            </textarea>
+
+            <h5>input type = checkbox</h5>
+            <div class="checkbox">
+                <label for="">
+                    <input type="checkbox" value="">
+                    체크박스
+                </label>               
+            </div>
+            <div class="checkbox">
+                <label for="">
+                    <input type="checkbox" value="">
+                    체크박스
+                </label>               
+            </div>
+
+            <h5>input radio</h5>
+            <div class="radio">
+                <label for="">
+                    <input type="radio" name="radio" checked>
+                    라디오버튼1
+                </label>
+            </div>
+            <div class="radio">
+                <label for="">
+                    <input type="radio" name="radio" checked>
+                    라디오버튼2
+                </label>
+            </div>
+
+            <h5>인라인 체크박스</h5>
+            <label class="checkbox-inline">
+                <input type="checkbox" value="">체크박스 1
+            </label> 
+            <label class="checkbox-inline">
+                <input type="checkbox" value="">체크박스 2
+            </label> 
+            <label class="checkbox-inline">
+                <input type="checkbox" value="" checked>체크박스 3
+            </label> 
+
+            <input type="text" class="form-control" disabled placeholder="이부분은 비활성화 ">
+            <input type="text " class="form-control input-lg" placeholder="input lg"><br>
+            <input type="text " class="form-control " placeholder="default"><br>
+            <input type="text " class="form-control input-sm" placeholder="input sm"><br>
+
+
+
+            <h5>그리드를 이용해 컬럼 크기 조절</h5>
+            <div class="row">
+                <div class="col-sm-2 col-lg-2">
+                    <input type="text" class="form-control " placeholder="col-sm-2 col-lg-2"> 
+                </div>
+                <div class="col-sm-3 col-lg-3">
+                    <input type="text" class="form-control " placeholder="col-sm-3 col-lg-3"> 
+                </div>
+                <div class="col-sm-4 col-lg-4">
+                    <input type="text" class="form-control " placeholder="col-sm-4 col-lg-4"> 
+                </div>
+            </div>
+            <br><br>
+
+            <h5 class="text-primary">3가지 버튼 타입</h5>
+            <button type="button"> 선택자 적용하지 않음</button> 
+            <button type="button" class="btn"> 선택자 적용</button> 
+            
+
+            <h5 class="text-primary">버튼 태그 사용(색상)</h5>
+            <button type="button" class="btn-default">버튼</button>
+            <button type="button" class="btn-primary">버튼</button>
+            <button type="button" class="btn-success">버튼</button>
+            <button type="button" class="btn-info">버튼</button>
+            <button type="button" class="btn-warging">버튼</button>
+            <button type="button" class="btn-danger">버튼</button>
+            <button type="button" class="btn-link">버튼</button>
+            
+            <br>
+            <br>
+
+            <a href="#" class="btn btn-primary" role="button"> 버튼 </a>
+            <a href="#" class="btn btn-danger" role="button"> 버튼 </a>
+            
+            
+            
+            <button type="button" class="btn-primary btn-lg">버튼</button>
+            <button type="button" class="btn-primary btn-sm">버튼</button>
+            <button type="button" class="btn-primary btn-xs">버튼</button>
+            <button type="button" class="btn-primary">버튼</button>
+
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+         /* 
+            position : static(디폴트) , relative(상대적 위치) , absolte(절대 위치) , fixed 4가지의 속성 
+             relative : 기준이 자신이 위치하고 있는 곳이 기준 
+             absolte : 절대적 위치(좌표)가 존재 페이지 시작하는 곳이 기준 
+
+             top , left , right , bottom 의 속성을 사용해 움직일 좌표를 설정한다. 
+            */
+        .box1{
+            /* position: absolute;
+            top: 20px;
+            left: 20px; */
+            float: left;
+            width: 100px;
+            background-color: black;
+            color: bisque;
+            margin-right: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+        .box2{
+            background-color: rebeccapurple;
+            width: 300px;
+            padding: 20px;
+            float: left;
+            position: relative ;
+            top: 20px;
+            left: 20px;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">박스 1</div>
+    <div class="box2">박스 2</div>
+</body>
+</html>

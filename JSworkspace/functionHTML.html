@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // // 일반 함수 정의 방식 (함수의 선언)
+        // console.log(add(5, 8));
+        // // funcion 으로 선언된 함수는 호이스팅이 가능하다. 
+        // function add(x, y) {
+        //     return x + y;
+        // }
+        // let sum = add(10, 20);
+        // console.log(sum);
+
+        // // 익명 함수 선언 참조 방식 (함수의 표현식)
+        // // 익명함수는 호이스팅 불가(오류 발생) 
+        // // let a1 = add2(1,2); 오류
+        // // console.log(a1);
+        // let add2 = function (x, y) {
+        //     return x + y;
+        // }
+        // let sum2 = add2(12, 22);
+        // console.log(sum2);
+
+        // // 생성자 함수 호출 방식 (호이스팅 불가)
+        // let add3 = new Function('x', 'y', 'return x + y')
+        // let sum3 = add3(13, 23);
+        // console.log(sum3);
+
+
+        // //화살표 함수 (=> 리턴문) / 호이스팅 불가 
+        // let add4 = (x, y) => x + y; // 출력함수가 아니면 모두 return문장
+        // let sum4 = add4(14, 24);
+        // console.log(sum4);
+
+        // var color = ["white", "yellow", "aqua", "purple"];
+        // var i = 0;
+
+        // function chageColor() {
+        //     let auto = setInterval(function () {
+        //         i++;
+        //         console.log(color[i]);
+        //         if(i >= color.length){
+        //             i = 0;
+        //         }
+        //         var bodyTag = document.getElementById("theBody");
+        //         bodyTag.style.backgroundColor = color[i];
+        //     }, 3000);
+
+        // }
+            // 연습문제 1
+        // function chColor(){
+        //     var arrColor = ["#ff0" , "6c0" , "fcf" , "#cf0" , "#39f"];
+        //     var arrNum = Math.floor(Math.random() * arrColor.length);
+        //     var bodyTag = document.getElementById("theBody");
+        //     bodyTag.style.backgroundColor = arrColor[arrNum];
+        // }
+
+        // 연습문제 2
+        function TestScore(name , kor , eng){
+            this.userName = name;
+            this.korNum = kor;
+            this.engNum = eng;
+
+            this.getTestInfo = function(){
+                document.write("이름 : " + this.userName , "<br>");
+                document.write("국어 : " + this.korNum , "<br>");
+                document.write("영어 : " + this.engNum , "<br>");
+            }
+
+            this.getAvg = function(){
+                return (this.korNum+this.engNum)/2;
+            }
+
+        }
+
+        var kimgun = new TestScore("김군" , 80 , 90);
+        var ohgun = new TestScore("오군" , 100 , 80);
+
+        kimgun.getTestInfo();
+        document.write("평균 점수 : " , kimgun.getAvg() , "<br><br>");
+        ohgun.getTestInfo();
+        document.write("평균 점수 : " , ohgun.getAvg() , "<br><br>");
+
+    </script>
+</head>
+
+<body id="theBody">
+    <!-- 함수 -->
+  
+
+    <!-- <button onclick="chColor();"> 배경 </button> -->
+    <!-- <button onclick="chageColor();"> 배경색 바꾸기 </button>
+    <button type="button" onclick="clearInterval(auto);"> clearInterval()</button> -->
+</body >
+
+</html>

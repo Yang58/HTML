@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <script>
+        // 전체 선택자 
+        $(function () {
+            $("*").css("border", "1px solid black");
+        });
+
+        // id 선택자 : 아이디 선택자는 하나의 태그만 적용 가능 ? 
+        $(function () {
+            $("#title").css("color", "blue")
+                .css("border", "1px solid red"); // 체이닝 기법 ( 메서드를 연속해서 사용가능 
+            // 마지막 문장에는 세미콜론을 사용해 마무리 
+        });
+
+        // 자식 요소 
+        // $(function () {
+        //     $(".tit").children("#p").css({
+        //         "background-color" : "white"
+        //     }) // 체이닝 기법 ( 메서드를 연속해서 사용가능 
+        //     // 마지막 문장에는 세미콜론을 사용해 마무리 
+        // });
+
+        $(function () {
+            $(".tit > #p").css({
+                "background-color" : "blue"
+            }) // 체이닝 기법 ( 메서드를 연속해서 사용가능 
+            // 마지막 문장에는 세미콜론을 사용해 마무리 
+        });
+
+        // 클래스 선택자 : 
+        $(function () {
+            $(".tit").css("background-color", "#ff0")
+                .css("border", "2px double black");
+
+        });
+
+     
+
+        // 요소명 선택자 (태그 선택자): 지정한 요소명과 일치하는 모든 요소를 선택 
+        $(function(){
+            $("h6").css("background-color" , "#0FF");
+        })
+
+        //그룹 선택자 : 여러개의 요소를 묶어 한번에 CSS적용 
+        // $(function(){
+        //     $("h5 , h6 ..... ").css("background-color" , "#0FF");
+        // })
+
+        //종속 선택자 
+        $(function(){
+            // 클래스 값이용
+            $("p.tit1").css("border", "1px dashed #b0c");
+            // id값 이용 
+            $("p#tit1").css("border" , "1px solid red");
+        })
+
+        // div 
+        $(function(){
+            $("#inner_wrap p:nth-child(3n)").css({
+                "color":"white",
+                "background-color":"black"
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <h1 id="title"> 아이디 선택자 Test </h1>
+    <!-- <h2 class="tit"> 클래스 선택자 Test </h1> -->
+    <h3 class="tit"> Test <p id="p"> p태그 </p> </h1>
+    <h4 id="title"> Test </h1>
+    <h5> Test </h1>
+    <h6> Test </h1>
+
+    <p class="tit1"> 클래스 적용 </p>
+    <p id="tit1"> 클래스 미적용 </p>
+
+    <br><br><br>
+
+    <div id="warp">
+        <div id="inner_wrap">
+            <h1>제목1</h1>
+            <h2>제목2</h1>
+            <p>내용1</p>
+            <p>내용2</p>
+            <p>내용3</p>
+            <p>내용4</p>
+            <p>내용5</p>
+            <p>내용6</p>
+        </div>
+
+    </div>
+</body>
+
+</html>

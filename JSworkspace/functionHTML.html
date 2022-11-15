@@ -82,10 +82,16 @@
         var kimgun = new TestScore("김군" , 80 , 90);
         var ohgun = new TestScore("오군" , 100 , 80);
 
+    
+
         kimgun.getTestInfo();
         document.write("평균 점수 : " , kimgun.getAvg() , "<br><br>");
         ohgun.getTestInfo();
         document.write("평균 점수 : " , ohgun.getAvg() , "<br><br>");
+
+        if(kimgun.getTestInfo() == ohgun.getTestInfo()){
+            document.write("같음")
+        }
 
     </script>
 </head>

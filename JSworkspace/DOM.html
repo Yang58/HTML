@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            
+        }
+    </script>
+</head>
+<body>
+    <!-- <h1 id="selector">선택자</h1> -->
+
+    <h1>선호하는 음식 </h1>
+    <div id="food_1">
+        <h2 id="title">한식</h2>
+        <ol>
+            <li id="kimchi">
+                <a href="#">김치</a>
+            </li>
+            <li > 불고기 </li>
+            <li > 비빔밥 </li>
+        </ol>
+    </div>
+    <div id="food_2">
+        <h2 >양식</h2>
+        <ol id="list">
+            <li>돈가스</li>
+            <li id="pizza">피자</li>
+            <li>파스타</li>
+        </ol>
+    </div>
+
+    <p id="info"> 안녕하세요 </p>
+    <button type="button" onclick="change()">p 태그 배경색 </button>
+
+    <script>
+
+        let hTag = document.getElementsByTagName("h1"); // 값을 배열 형식으로 리턴 
+        hTag[0].style.color = "#cf0";
+        hTag[0].style.backgroundColor = "black";
+        
+        
+        // id 값을 통해 접근 후 태그 안에 li 태그를 지정 ( 배열 형식으로 받아옴 )
+        let myList = document.getElementById("food_1").getElementsByTagName("li");
+        myList[1].style.backgroundColor = "#39f"// [1]번 인덱스는 불고기 지정
+        
+        let pTag = document.getElementById("info").innerHTML; 
+        // innerHTML은 태그 바디 안의 값을 가져옴
+        console.log(pTag);
+        
+        document.getElementById("info").innerHTML = "HI DOM";
+        console.log(pTag);
+
+        function change(){
+
+            document.getElementById("info").style.backgroundColor = "#b0c";
+        }
+
+
+
+        // let hTeg = document.getElementById("selector"); // 요소에 아이디 값을 통해 태그 제어 
+        // hTeg.style.color = "red";
+        // hTeg.style.fontSize = "50px"
+
+    </script>
+</body>
+</html>

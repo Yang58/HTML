@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <script>
+        /*
+            객체의 정의와 프로퍼티 참조 방식
+            1. object.property ( Dot Notation)
+            2. object['property'] (Bracket Notation)
+        */
+       /*
+            객체 생성 방식 
+            1. let obj = { key : value ...  
+                함수명: function(){
+                    실행문 or 리턴문 
+                }
+            };
+
+            2. let obj = new Object(); 
+                obj.key = "value";
+
+            3. function obj (매개변수 ...)
+                this.매개변수 = 변수 ; ...
+                this.함수명 = function(){
+                    실행문 or 리턴문 
+                }
+
+       */
+        let obj = {
+            cat:"mcow",
+            dog:"woof"
+            // animal: function(){
+            //     // 탬플릿 방식 
+            //     return `현재 동물은 ${this.cat}과 ${this.dog} 입니다.`
+            // }
+        };
+        console.log(obj.cat);
+        console.log(obj['dog']);
+        // 두개의 차이점은 bracket방식은 괄호안에 변수를 담아 사용할수 있다.
+        let dog = "dog";
+        console.log(obj[dog]);
+        
+        // 함수 사용
+        // let str = obj.animal();
+        // console.log(str);
+
+        //객체에 데이터 추가
+        obj.cow = "mooo";
+        obj["pig"] = "oink";
+
+        console.log(obj.cow);
+        console.log(obj.pig);
+
+        //객체에 데이터 삭제 
+        delete obj.cat;
+
+        //객체에 데이터 수정
+        obj.dog = "abc";
+
+
+        let obj1 = {
+            cat:"mcow",
+            dog:"woof"
+        };
+        //데이터 조회 
+        for(let key in obj1){
+            console.log(`key는 ${key} , value 는 ${obj1[key]} 입니다. `);
+        }
+
+    </script>
+<body>
+
+</body>
+</html>

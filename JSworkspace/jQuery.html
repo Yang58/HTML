@@ -25,15 +25,14 @@
         // $(function () {
         //     $(".tit").children("#p").css({
         //         "background-color" : "white"
-        //     }) // 체이닝 기법 ( 메서드를 연속해서 사용가능 
+        //     }); // 체이닝 기법 ( 메서드를 연속해서 사용가능 
         //     // 마지막 문장에는 세미콜론을 사용해 마무리 
         // });
 
         $(function () {
             $(".tit > #p").css({
                 "background-color" : "blue"
-            }) // 체이닝 기법 ( 메서드를 연속해서 사용가능 
-            // 마지막 문장에는 세미콜론을 사용해 마무리 
+            });
         });
 
         // 클래스 선택자 : 
@@ -45,26 +44,27 @@
 
      
 
-        // 요소명 선택자 (태그 선택자): 지정한 요소명과 일치하는 모든 요소를 선택 
+        // 요소 선택자 (태그 선택자): 지정한 요소명과 일치하는 모든 요소를 선택 
         $(function(){
             $("h6").css("background-color" , "#0FF");
         })
 
         //그룹 선택자 : 여러개의 요소를 묶어 한번에 CSS적용 
         // $(function(){
-        //     $("h5 , h6 ..... ").css("background-color" , "#0FF");
+        //     $("h5 , h6 , 등등... ").css("background-color" , "#0FF");
         // })
 
         //종속 선택자 
         $(function(){
-            // 클래스 값이용
+            // 클래스 값이용 p 태그 중 class가 tit1인 것
             $("p.tit1").css("border", "1px dashed #b0c");
-            // id값 이용 
+            // id값 이용  p 태그 중 id가 tit1인것 
             $("p#tit1").css("border" , "1px solid red");
         })
 
         // div 
-        $(function(){
+        $(function(){ 
+            // id가 inner_wrap 중 p 태그의 인덱스 번호가 3의 배수인 것들
             $("#inner_wrap p:nth-child(3n)").css({
                 "color":"white",
                 "background-color":"black"

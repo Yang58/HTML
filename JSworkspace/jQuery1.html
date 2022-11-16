@@ -40,15 +40,18 @@
                 "name" : "ㅁㅁ",
                 "area" : "seoul"
             }
-            
+
+            // inArray("값" , 배열명) : 배열에서 값을 찾아 인덱스번호를 반환 
             var index = $.inArray("c" , arr1);
             console.log(index);
 
+            // isArray(배열명) : 배열인지 아닌지 확인 맞으면 True 아니면 False 
             var okArray1 = $.isArray(arr1);
             var okArray2 = $.isArray(obj);
             console.log(okArray1);
             console.log(okArray2);
 
+            // 두개의 배열을 합쳐서 출력
             $.merge(arr2 , arr1);
             console.log(arr2);
 

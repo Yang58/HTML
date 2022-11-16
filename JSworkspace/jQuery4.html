@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <script>
+        $(function(){
+            let $txt1 = $(".txt_1 span");
+            let $txt2 = $(".txt_2 span");
+            let $box = $(".box ");
+
+            let off_top = $box.offset().top;
+            let pos_top = $box.position().top;
+
+            $txt1.text(off_top);
+            $txt2.text(pos_top);
+
+            // 지정한 위치로 스크롤 이동
+            let offset_top = $("h1").offset().top;
+            $(window).scrollTop(offset_top);
+            console.log(offset_top);
+
+            let sct = $(window).scrollTop();
+            console.log(sct);
+
+            if(sct == 2346){
+                $("body").css("background-color" , "#f0f");
+            }
+
+        })
+    </script>
+
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        #box_wrap{
+            width: 300px;
+            height: 200px;
+            margin: 50px auto 0 ;
+            position: relative;
+            background-color: antiquewhite;
+        }
+        .box{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background-color: white;
+            left: 100px;
+            top: 50px;
+        }
+
+        body{
+            line-height: 1;
+        }
+
+        #wrap{
+            height: 50000000px;
+            padding-top: 2000px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box_wrap">
+        <p class="box">
+            박스
+        </p>
+    </div>
+    <p class="txt_1"> 절대 top 위치 값 : <span></span></p>
+    <p class="txt_2"> 상대 top 위치 값 : <span></span></p>
+
+    <br><br><br><br>
+
+    <div id="wrap">
+        <h1>위치 메서드</h1>
+    </div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <script>
+        $(function(){
+            $(".btn2").hide();
+
+            $(".btn1").on("click",function(){
+                $(".box").slideUp(1000,"linear", function(){
+                    $(".btn1").hide();
+                    $(".btn2").show();
+                });
+            });
+
+
+            $(".btn2").on("click",function(){
+                $(".box").fadeIn(1000,"swing", function(){
+                    $(".btn2").hide();
+                    $(".btn1").show();
+                });
+            });
+
+            $(".btn3").on("click" , function(){
+                $(".box").slideToggle(1000,"linear");
+            });
+
+            $(".btn4").on("click" , function(){
+                $(".box").fadeTo("fast" , 0.3);
+            });
+
+            $(".btn5").on("click" , function(){
+                $(".box").fadeTo("fast" , 1);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <p>
+        <button class="btn1">slide Up</button>
+        <button class="btn2">fade In</button>
+    </p>
+    <p>
+        <button class="btn3"> toggle Slide</button>
+    </p>
+
+    <p>
+        <button class="btn4"> fade To (0,3)</button>
+        <button class="btn5"> fade To (1)</button>
+    </p>
+
+    <div class="box">
+        <div class="content">
+            jasfkjasljflasjd  lfjajasfkjasljflasjdlfja
+            jasfkjasljf l  asj d lfjaja  sfkjasljflasjdlfja jasfkjasljflasjdlfja
+            jasfkjasljfl asj dl fjaj as fkjasljflasjdlfjajasfkjasljflasjdlfja
+            jasfkjaslj flasjdl fja  
+            jasfkjaslj fla s  j dlf j a jasfkjasljflasjdlfja
+            jasfkjasljflas jdlfj a jasfkjasljflasjdlfjajasfkjasljflasjdlfja
+            jasfkjasl jflas jdlfj  a
+        </div>
+    </div>
+</body>
+</html>

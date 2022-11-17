@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <style>
+
+        body{
+            margin: 0px;
+            padding: 0px;
+            height: 10000px;
+            width: 5000px;
+        }
+        #wrap{
+            position: fixed;
+            left: 500px;
+           top: 10px;
+           color: rgb(rgb(255, 0, 0), green, blue);
+        }
+    </style>
+
+    <script>
+
+        $(function(){
+
+            // click - dblclick
+            $(".btn1").dblclick(function(){
+                $(".btn1").parent().next().css({ "color":"#f00"});
+            });
+            $(".btn1").click(function(){
+                $(".btn1").parent().next().css("color","black");
+            });
+
+            // over - focus - out - blur 
+            $(".btn2").on({
+                "mouseover focus" : function(){
+                    $(".btn2").parent().next().css({ "color" : "#0f0"});
+
+                },
+                "mouseout blur" : function(){
+                    $(".btn2").parent().next().css({"color" : "#000"});
+                },
+            });
+
+            // 이벤트 제거 
+            $(".btn2").off("mouseover focus mouseout blur");
+        });
+
+
+        // <a> <form>
+        $(function(){
+            // a , form 태그에 이벤트 설정이 필요한 경우
+            // 기본 이벤트를 막아줘야 정상적인 이벤트 실행이 가능 
+            $(".btn1").on("click",function(e){
+                e.preventDefault(); // btn1에 설정된 기본 이벤트를 막는다.
+                $(".txt1").css("color","red");
+            });
+
+            $(".btn2").on("click", function(){
+                $(".txt2").css("color","green");
+                return false; // btn2에 설정된 기본 이벤트를 막고 종료 
+            });
+
+            $(".btn3").on("dblclick", function(){
+                $(".txt3").css("color","pink");
+            });
+        });
+
+
+        // 마우스 
+        $(function(){
+            // over / out
+            $(".btn4").on({
+                "mouseover" : function(){
+                    $(".txt4").css("color" , "#ff0");
+                },
+                "mouseout" : function(){
+                    $(".txt4").css("color" , "black")
+                }   
+            });
+
+            // hover
+            $(".btn5").hover(function(){
+                $(".txt5").css({
+                    "background-color" : "white",
+                    "color" : "aqua"
+                });
+            },function(){
+                $(".txt5").css({
+                    "background-color" : "black",
+                    "color" : "white"
+                });
+            });
+        });
+
+
+        // mouseenter - mouseleave
+        $(function(){
+            $("#box_1").on({
+                "mouseenter" : function(){
+                    $("#box_1").css("background-color" , "aqua");
+               },
+               "mouseleave" : function(){
+                    $("#box_1").css("background-color" , "white");
+               }
+            });
+        });
+
+        // 마우스의 좌표값 
+        $(function(){
+            $(document).on("mousemove" , function(e){
+                $(".posX").text(e.pageX);
+                $(".posY").text(e.pageY);
+            });
+        });
+        // scroll 
+        $(function(){
+            $(window).on("scroll" , function(){
+                var sc_top = $(this).scrollTop(); // this : 자신을 호출한 window를 가르킴
+                var sc_left = $(this).scrollLeft();
+                $(".top").text(sc_top);
+                $(".left").text(sc_left);
+                
+            });
+        });
+
+
+        $(function(){
+            $("#user_id_1").on("focus" , function(){
+                $(this).css("background-color" , "pink");
+            });
+            $("#user_id_1").on("blur" , function(){
+                $(this).css("background-color" , "orange");
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>
+        <button class="btn1"> 버튼 1 </button>
+    </p>
+    <p>내용 1</p>
+    <p>
+        <button class="btn2"> 버튼 2</button>
+    </p>
+    <p>내용 2</p>
+
+    <br><br><br><br>
+
+    <h1>기본 이벤트 차단</h1>
+    <p>
+        <a href="http://www.easyspub.co.kr/" class="btn1">버튼 1</a>
+    </p>
+    <p class="txt1">내용 1</p>
+    <p><a href="http://www.easyspub.co.kr/" class="btn2">버튼 2</a></p>
+    <p class="txt2">내용 2</p>
+    <p><button class="btn3">버튼 3</button></p>
+    <p class="txt3">내용 3</p>
+
+    <br><br><br>
+    <h1>mouseover ,mouseout , hover</h1>
+    <p><button class="btn4"> Mouse over / out</button></p>
+    <p class="txt4">내용 1</p>
+    <p><button class="btn5"> hover</button></p>
+    <p class="txt5">내용 2</p>
+
+
+    <br><br><br>
+    <h1>mouseenter / mouseleave</h1>
+    <div id="box_1">
+        <p> <a href="#">내용 1</a></p>
+        <p> <a href="#">내용 2</a></p>
+        <p> <a href="#">내용 3</a></p>
+        <p> <a href="#">내용 4</a></p>
+    </div>
+
+    <br><br><br>
+    <h1>mouse move</h1>
+    <p>X :  <span class="posX">0</span></p>
+    <p>Y :  <span class="posY">0</span></p>
+
+
+    <br><br><br>
+
+
+    <div id="wrap">
+        <p style="font-style:italic; font-weight:bold; font-size: 20px;"> scroll location</p>
+        <p>scrollTop : <span class="top"> 0 </span></p>
+        <p>scrollLeft : <span class="left"> 0 </span></p>
+    </div>
+
+    <h1>포커스 이벤트</h1>
+    <form action="#">
+        <p>
+            <label for="user_id_1">ID</label>
+            <input type="text" name="user_id_1" id="user_id_1">
+        </p>
+    </form>
+
+
+
+</body>
+</html>

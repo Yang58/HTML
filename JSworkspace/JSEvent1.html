@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <script>
+        $(function(){
+            // change : blur 이벤트가 발생하는 순간 change이벤트가 발생
+            $("#rel_site").on("change",function(){
+
+                //체크 되어있는지 확인 
+
+                $(".txt").text($(this).val());
+            });
+
+            // $("#id").on("change",function(){
+            //     $(".txt").text($(this).val());
+            // });
+            let arr = ["돈","부자","천재"];
+
+            $("#id").on("keydown" , function(){
+                var term = $(this).val();
+                
+                $(".txt1").text(term);
+                // 엔터를 쳤을때 아래에 p 태그 추가 
+                for(let i = 0 ; i < arr.length ; i++){
+                    if(term == arr[i]){
+                        $(".txt1").text("금지어");
+                    }
+                }
+                
+            })
+        });
+    </script>
+
+</head>
+<body>
+    <select id="rel_site">
+        <option value=""> 사이트 선택</option>
+        <option value="www.google.com" selected> 구글 </option>
+        <option value="www.naver.com"> 네이버 </option>
+        <option value="www.daum.com"> 다음 </option>
+    </select>
+    <p class="txt"></p>
+    <br><br>
+    <label for="id">댓글 : </label>
+    <input type="text" id="id">
+    <p class="txt1"></p>
+
+</body>
+</html>
